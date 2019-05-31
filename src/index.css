@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background: #F9F9F3;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -11,3 +12,231 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.by-month {
+  display: flex;
+  height: 20px;
+  flex: 0.2;
+  width:100%;
+  max-width:204px;
+  font-size: 0.6rem;
+  align-self: center;
+  color: #686059;
+  font-weight: lighter;
+}
+
+.tab-list {
+  background-color: #ECF7F2;
+  display: flex;
+  padding-left: 6.5rem;
+  margin-bottom: 0;
+  padding-top: 1.9rem;
+  margin-top: 0;
+  text-align: center;
+}
+
+.tab-list-item {
+  position: relative;
+  z-index: 3;
+  flex-grow: 1;
+  justify-content: space-between;
+  background-color: #e6ece6;
+  list-style: none;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1.5rem;
+  color: #85af85;
+}
+
+.tab-list-active {
+  position: relative;
+  z-index: 4;
+  background-color: white;
+  border: solid #ccc;
+  border-bottom: 5px solid white !important;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-width: 1px 1px 0 1px;
+  margin-top: -3px;
+  color: #686059;
+  font-weight: bold;
+}
+
+.tab-content {
+  background-color: white;
+}
+
+.sub-nav {
+  display: inline-flex;
+  /* justify-content: flex-start; */
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.sub-nav-2 {
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: inset -2px -33px 65px 17px rgba(196,192,186,1);
+  height: 1000px;
+}
+
+.green-box {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 4.75rem;
+  width: 4.75rem;
+  max-height: 4.75rem;
+  max-width: 4.75rem;
+  align-items: center;
+  margin-left: 6rem;
+  margin-top: 1.5rem;
+  margin-right: 2rem;
+  transition: 1s;
+  box-shadow: inset 0px 3px 3px 0px #b0fc8d;
+  background: linear-gradient(to bottom, #99d17d 5%, #83b36b 100%);
+  background-color: #99d17d;
+  border-radius: 7px;
+  border: 1px solid #4b8f29;
+}
+
+.green-box:hover {
+  background: linear-gradient(to bottom, #83b36b 5%, #99d17d 100%);
+  background-color: #83b36b;
+}
+.green-box:active {
+  position: relative;
+  top: 10px;
+}
+
+.green-box img {
+  margin: auto;
+  vertical-align: middle;
+  justify-items: center;
+}
+
+.white-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  flex-grow: 1;
+  align-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: white;
+  height: 20rem;
+  max-height: 30rem;
+  max-width: 15rem;
+  margin: 0.5rem 0.5rem;
+  border-radius: 7px;
+}
+.white-box > section:first-child {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.white-box > section:first-child > span > img {
+  display: inline-flex;
+  flex: 1;
+  position: relative;
+}
+
+.text-center {
+  flex: 0.5;
+  color: #686059;
+  margin: 1rem 0.8rem 0.5rem 0.8rem;
+  width: 100%;
+  max-width: 204px;
+  align-self: center;
+}
+
+.text-center > span > img {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #eee;
+  flex: 2;
+  /* position:relative; */
+}
+
+.white-box img:hover {
+  background: lightgrey;
+}
+
+.blue-box {
+  display: block;
+  flex: 2;
+  flex-direction: column;
+  content: "";
+  width: 100%;
+  align-content: space-between;
+}
+
+.blue-box-2 {
+  flex: 1;
+  align-self: center;
+}
+.blue-box-2 > span > img {
+  align-items: center;
+}
+
+.blue-box-3 {
+  margin: 7px;
+  flex: 1;
+  align-self: center;
+}
+
+.tan-box {
+  display: flex;
+  flex-flow: row;
+  align-content: space-evenly;
+  content: "";
+  flex: 1;
+  background: #F9F9F9;
+  height: 50px;
+  width: 100%;
+  font-size: 8px;
+  align-self: auto;
+}
+.tan-box > :first-child {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  justify-content: space-evenly;
+}
+.tan-box > :nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tan-box > :nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+/* .tab-list-active:after
+{
+  z-index: 3;
+  position: absolute;
+  content: "";
+  bottom: 155px;
+  right: 0px;
+  left: auto;
+  width: 2rem;
+  height: 1rem;
+  top: 25%;
+  max-width:85px;
+  background: grey;
+  /* -webkit-box-shadow: 0 15px 5px #777;
+  -moz-box-shadow: 0 15px 5px #777; */
+/* box-shadow: 0 15px 5px #777;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(273deg);
+} */
