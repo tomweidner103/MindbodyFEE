@@ -15,8 +15,9 @@ code {
 
 .by-month {
   display: flex;
+  align-items: center;
   height: 20px;
-  flex: 0.2;
+  flex: 0.18;
   width:100%;
   max-width:204px;
   font-size: 0.6rem;
@@ -39,11 +40,13 @@ code {
   position: relative;
   z-index: 3;
   flex-grow: 1;
+  flex-wrap: nowrap;
   justify-content: space-between;
   background-color: #e6ece6;
   list-style: none;
   border: 1px solid #ccc;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.25rem;
+  font-size:1rem;
   color: #85af85;
 }
 
@@ -125,16 +128,28 @@ code {
   align-items: flex-start;
   justify-content: space-between;
   background: white;
-  height: 20rem;
+  height: 15rem;
   max-height: 30rem;
   max-width: 15rem;
   margin: 0.5rem 0.5rem;
+  margin-top:1.5rem;
   border-radius: 7px;
+  border: 1px solid #ccc;
+}
+.white-box-2 {
+  height: 25rem;
+  background: green;
 }
 .white-box > section:first-child {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
+}
+.white-box > section:nth-child(5) > img{
+  margin-top:2rem;
+  padding-bottom: 1rem;
+  /* display:flex; */
+  float:right;
 }
 
 .white-box > section:first-child > span > img {
@@ -166,10 +181,11 @@ code {
 
 .blue-box {
   display: block;
-  flex: 2;
+  flex: 0.65;
   flex-direction: column;
   content: "";
   width: 100%;
+  height: 50px;
   align-content: space-between;
 }
 
@@ -192,32 +208,101 @@ code {
   flex-flow: row;
   align-content: space-evenly;
   content: "";
-  flex: 1;
+  flex: 0.65;
   background: #F9F9F9;
   height: 50px;
   width: 100%;
   font-size: 8px;
+  margin:-1px;
   align-self: auto;
+  border: 1px solid #ccc;
 }
 .tan-box > :first-child {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 19px;
   justify-content: space-evenly;
 }
 .tan-box > :nth-child(2) {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 .tan-box > :nth-child(3) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 20px;
+  margin-right: 19px;
 }
 
+.content {
+  padding: 10px 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.hidden-section {
+  display: none;
+  flex: 2;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  width: 204px;
+  height: 45px;
+  overflow:hidden;
+}
+
+.list {
+  margin-top: 1rem;
+  display: flex;
+  font-size:10px;
+  max-width: 204px;
+  width:100%;
+}
+
+th {
+  text-align: left;
+}
+
+.table {
+  max-width: 204px;
+  width:100%;
+}
+.td-list {
+  margin-top:1px;
+  margin-bottom:1px;
+  vertical-align:center;
+}
+
+tr.border_bottom td {
+  border-bottom:1px solid #F9F3F3;
+  /* display:flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+}
+
+.list-2 {
+  flex-flow: column;
+  display: flex;
+  font-size:10px;
+}
+
+.list-item {
+  margin-top: 4px;
+  list-style-type: none;
+}
+
+.more {
+  cursor: pointer;
+}
+
+.graph {
+  height:10px !important;
+  width:10px !important;
+}
 /* .tab-list-active:after
 {
   z-index: 3;
