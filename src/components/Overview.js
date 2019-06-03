@@ -269,7 +269,8 @@ class Overview extends React.Component {
                             fontWeight: "lighter",
                             marginBottom: "1rem",
                             marginTop: "-0.25rem",
-                            color: '#686059'
+                            color: '#686059',
+                            cursor: 'pointer'
                           }}
                         >
                           more
