@@ -403,9 +403,9 @@ tr.border_bottom td {
   .tab-list {
     flex-wrap: wrap;
   }
-  .container {
+  /* .container {
     width:1100px
-  }
+  } */
 }
 @media screen and (max-width: 1200px){
   .tab-list {
