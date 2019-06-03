@@ -20,6 +20,7 @@ class Tab extends React.Component{
         const {onClick, props: { activeTab, label}} = this
         let className = "tab-list-item"
 
+        //here, since some labels need their own classes, I just add them to the classList depending on what the tab is
         if(label === "Client Home"){
             className += ' min-width'
         }
@@ -29,13 +30,13 @@ class Tab extends React.Component{
         }
 
         if(activeTab === label) {
-            className += ' tab-list-active'
+            className += ' tab-list-active skewed-shadow'
         }
         if(label === 'Dashboard'){
             className += " dash"
         }
 
-
+        // returning all tabs with correct classNames
         return (
             <div>
                 <div className='gray-box'></div>

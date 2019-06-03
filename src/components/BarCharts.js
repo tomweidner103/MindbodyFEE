@@ -15,7 +15,7 @@ class BarCharts extends React.Component {
 
 
     return (
-      <BarChart width={204} height={92} data={data2} className="blue-box-2" margin={{top: 0, right:0, bottom: -5, left: 0}} barGap={2} barSize={7}>
+      <BarChart width={204} height={92} data={data2} className="chart-box" margin={{top: 0, right:0, bottom: -5, left: 0}} barGap={2} barSize={7}>
         <XAxis dataKey="name" style={{fontSize: '10px', color: "#686059", fontWeight: 'lighter'}} interval={0} axisLine={false} tickLine={false}/>
         <Tooltip viewBox={{ x: 10, y: 10, width: 2, height: 2 }} separator={": $"}/>
         <Bar dataKey="Prev" fill="#BAAFF7" animationDuration={2000}/>

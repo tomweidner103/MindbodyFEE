@@ -1,11 +1,11 @@
 import React from "react";
-import "./App.css";
+import "./index.css";
 import NavBar from "./components/NavBar";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Labels from "./components/Labels";
 // import SignIn from "./components/SignIn";
 import Dashboard from "./components/Dashboard";
-// import Classes from "./components/Classes";
+import Classes from "./components/Classes";
 import Overview from "./components/Overview";
 import {tabs} from './api/api'
 
@@ -16,15 +16,16 @@ class App extends React.Component {
     this.state = {
       selected: "",
       id: "Business_Overview",
-      tab: ""
+      tab: "",
+      path: ''
     };
   }
 
   async componentDidMount(){
+    // making sure Business Overview is loaded first, and changing the class to bold
     const ele = await document.getElementById(this.state.id)
     ele.className += " sub-nav-2"
   }
-
   clicked = async word => {
     const ele2 = await document.getElementById(this.state.id);
     if (ele2) {
@@ -43,6 +44,7 @@ class App extends React.Component {
       <div className="nav">
         <img src="../../assets/logo.png" alt="" className="logo-img" />
         <div>
+    {/*This component defines the tabs in the nav bar, and also all of their children that will be clickable links*/}
           <NavBar>
             {
               tabs.map((tab, idx) => {
@@ -62,10 +64,11 @@ class App extends React.Component {
         </div>
         <div>
           <Switch>
+            {/* Routing to different tabs */}
             <Route exact path="/" component={Overview} />
+            <Route exact path="/home" component={Overview} />
             <Route exact path="/Dashboard" component={Dashboard} />
-            {/* <Route exact path="/dashboard" component={Overview} /> */}
-            {/* <Route exact path="/Classes/Classes" component={Classes} /> */}
+            <Route exact path="/Classes" component={Classes} />
             <Route exact path="/Business_Overview" component={Overview} />
           </Switch>
         </div>

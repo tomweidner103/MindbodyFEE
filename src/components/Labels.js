@@ -6,6 +6,7 @@ import '../index.css'
 const Labels = props => {
     let {clicked} = props
     const {labels} = props || []
+    // this is the inner sub navigation labels, to be displayed when its parent has been clicked
     return (
         <div>
         {labels[0].map(label => {

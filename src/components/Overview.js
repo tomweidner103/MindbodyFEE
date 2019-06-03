@@ -14,12 +14,21 @@ class Overview extends React.Component {
   }
 
   componentDidMount() {
+    // setting state to display the first three cards. the other two are displayed underneath i a list that can be expanded to update state
     this.setState({
       queue: programs.slice(3),
       cards: programs.slice(0, 3)
     });
   }
 
+  addString = (str) => {
+    //to add views or visits to monthly attendance
+    if(str.toLowerCase().includes('videos')){
+      return " views"
+    }else{
+      return ' visits'
+    }
+  }
   add = () => {
     //   for future use
 
@@ -36,7 +45,6 @@ class Overview extends React.Component {
 
   //this converts the price from a number to a string with the correct commas and $
   stringify = (price, str = "") => {
-    let right = 6;
     let left = 3;
     price = price.toString();
     let length = price.length;
@@ -53,6 +61,9 @@ class Overview extends React.Component {
   };
 
   expand = idx => {
+
+    // this function changes the size of the car to reveal the graphs below, based on the idx that is passed in
+    //displays the hidden-section and whanges the height of the card, and also changes the text to be displayed
     const element = document.getElementsByClassName("hidden-section");
     const whiteElement = document.getElementsByClassName("white-box");
     const inner = document.getElementsByClassName("more");
@@ -70,6 +81,7 @@ class Overview extends React.Component {
   };
 
   addToVisible = newCard => {
+    //changes state from list below to more cards being displayed with the correct data
     let arr = [...this.state.queue];
     let filteredArr = arr.filter(
       element => newCard.ProgramID !== element.ProgramID
@@ -86,18 +98,22 @@ class Overview extends React.Component {
     let visibleCards = this.state.cards || [];
     return (
       <div className="container">
+        {/* add card */}
         <div className="green-box" onClick={() => this.add()}>
           <img src="../../assets/plus_icon.png" alt="" />
         </div>
         <section className="body-cards">
+        {/* contain body to make flexbos easier */}
           <div className="body-whole">
             {visibleCards.map((program, idx) => {
               newArr = this.arrayify(pricing, program.ProgramID);
               return (
+                // these are each card. quite a component!
                 <div key={idx} className="white-box">
                   <section className="text-center">
                     <span>{program.Name}</span>
                     <span>
+                      {/* image of pencil */}
                       <img
                         alt=""
                         src="../../assets/pencil2.png"
@@ -110,24 +126,25 @@ class Overview extends React.Component {
                     </span>
                   </section>
                   <section className="by-month">Sales by Month</section>
-                  <section className="blue-box-2">
+                  <section className="chart-box">
                     <span>
+                      {/* fancy live data bar chart using recharts */}
                       <BarCharts program={program} />
                     </span>
                   </section>
                   <section className="tan-box">
-                    <span className="blue-box-3">
+                    <span className="tan-box-contents" style={{color: '#686A5C'}}>
                       Total Monthly{" "}
-                      <div style={{ fontSize: "13px" }}>Sales</div>
+                      <div style={{ fontSize: "13px", color: '#686A5C' }}>Sales</div>
                     </span>
-                    <span className="blue-box-3">
+                    <span className="tan-box-contents">
                       Current{" "}
-                      <div style={{ fontSize: "13px", fontWeight: "bold" }}>
+                      <div style={{ fontSize: "12px", fontWeight: "bold", color:'#686A5C' }}>
                         {this.stringify(program.TotalMonthlySales)}
                       </div>
                     </span>
                     <span
-                      className="blue-box-3"
+                      className="tan-box-contents"
                       style={{ textAlign: "center" }}
                     >
                       1-year{" "}
@@ -137,7 +154,6 @@ class Overview extends React.Component {
                         src="../../assets/spark_line.png"
                       />
                     </span>
-                    <span className="black-box" />
                   </section>
                   <section className="hidden-section">
                     <section className="list">
@@ -148,7 +164,8 @@ class Overview extends React.Component {
                               style={{
                                 width: "5.1rem",
                                 fontSize: "0.8rem",
-                                verticalAlign: "top"
+                                verticalAlign: "top",
+                                color: '#B6BAA3'
                               }}
                             >
                               Price Name
@@ -156,7 +173,8 @@ class Overview extends React.Component {
                             <th
                               style={{
                                 fontSize: "0.6rem",
-                                verticalAlign: "bottom"
+                                verticalAlign: "bottom",
+                                color: '#B6BAA3'
                               }}
                             >
                               Current
@@ -165,23 +183,26 @@ class Overview extends React.Component {
                               style={{
                                 textAlign: "center",
                                 fontSize: "0.6rem",
-                                verticalAlign: "bottom"
+                                verticalAlign: "bottom",
+                                color: '#B6BAA3'
                               }}
                             >
                               1-year
                             </th>
                           </tr>
                           {newArr.map((price, idx) => {
+                            // this is shortening all the names
                             if (price.Name.length > 14) {
                               price.Name = price.Name.substring(0, 14) + "...";
                             }
+                            // making sure the price displays correctly
                             const newPrice = this.stringify(price.Sales);
 
-                            //Charts component is making the little charts on each card, sending in the program each time to get the sales data. Since I don't have current sales data for each category, I just used the previous years sales for each program
+                            //Charts component is making the little charts on each card, sending in the program each time to get the sales data. Since I don't have current sales data for each category, I just used the previous years sales for each card/program
                             return (
                               <tr className="border_bottom" key={idx}>
-                                <td className="td-list">{price.Name}</td>
-                                <td className="td-list">{newPrice}</td>
+                                <td className="td-list" style={{fontWeight: 'bold'}}>{price.Name}</td>
+                                <td className="td-list" style={{color: '#B6BAA3', fontSize: '0.6rem'}}>{newPrice}</td>
                                 <td className="td-list">
                                   <Charts program={program} />
                                 </td>
@@ -193,6 +214,7 @@ class Overview extends React.Component {
                     </section>
                   </section>
                   <div
+                  //  the magic for the expanding section!
                     onClick={() => {
                       this.expand(idx);
                     }}
@@ -221,18 +243,23 @@ class Overview extends React.Component {
                 Monthly Attendance
               </div>
             </div>
+            {/* if initial state is altered, this will load all unseen cards into the same list, ready for clicking to view the contents */}
             <table className="initial-load">
               <tbody>
                 {programList.map((program, idx) => {
                   return (
                     <tr key={idx} style={{ marginBottom: "2rem" }}>
                       <td
+                        // changing state
                         onClick={() => this.addToVisible(program)}
                         style={{
                           fontSize: "0.8rem",
                           fontWeight: "bold",
                           minWidth: "120px",
-                          padding: 0
+                          color: '#686059',
+                          padding: 0,
+                          fontFamily: "'Sarala', 'sans-serif'"
+
                         }}
                       >
                         {program.Name} <br />
@@ -240,7 +267,9 @@ class Overview extends React.Component {
                           style={{
                             fontSize: "0.6rem",
                             fontWeight: "lighter",
-                            marginBottom: "1rem"
+                            marginBottom: "1rem",
+                            marginTop: "-0.25rem",
+                            color: '#686059'
                           }}
                         >
                           more
@@ -250,19 +279,28 @@ class Overview extends React.Component {
                         style={{
                           minWidth: "120px",
                           marginBottom: "1rem",
-                          verticalAlign: "top"
+                          fontWeight: 'bold',
+                          verticalAlign: "top",
+                          color: '#686059',
+                          fontFamily: "'Sarala', 'sans-serif'",
+                          fontSize: "0.8rem"
                         }}
                       >
+                        {/* here, "in" is used as a second argument to change the outcome of the price's display */}
                         {this.stringify(program.TotalMonthlySales, "in")}
                       </td>
                       <td
                         style={{
                           minWidth: "160px",
                           marginBottom: "1rem",
-                          verticalAlign: "top"
+                          verticalAlign: "top",
+                          color: '#686059',
+                          fontWeight: 'bold',
+                          fontFamily: "'Sarala', 'sans-serif'",
+                          fontSize: "0.8rem"
                         }}
                       >
-                        {program.MonthlyAttendance}
+                      {program.MonthlyAttendance}<span style={{fontSize: '0.6rem'}}>{this.addString(program.Name)}</span>
                       </td>
                     </tr>
                   );
