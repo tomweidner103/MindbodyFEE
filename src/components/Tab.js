@@ -24,13 +24,24 @@ class Tab extends React.Component{
             className += ' min-width'
         }
 
+        if(label === "Retail"){
+            className += ' retail'
+        }
+
         if(activeTab === label) {
             className += ' tab-list-active'
         }
+        if(label === 'Dashboard'){
+            className += " dash"
+        }
+
 
         return (
+            <div>
+                <div className='gray-box'></div>
             <li className={className}
             onClick={onClick}>{label}</li>
+            </div>
 
         )
     }

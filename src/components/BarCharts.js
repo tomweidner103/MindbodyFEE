@@ -13,7 +13,6 @@ class BarCharts extends React.Component {
         data2.push({name: months[i], Cur: program.Sales.CurrentYear[i], Prev: program.Sales.PreviousYear[i]})
     }
 
-    console.log(program)
 
     return (
       <BarChart width={204} height={92} data={data2} className="blue-box-2" margin={{top: 0, right:0, bottom: -5, left: 0}} barGap={2} barSize={7}>
