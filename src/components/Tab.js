@@ -20,6 +20,10 @@ class Tab extends React.Component{
         const {onClick, props: { activeTab, label}} = this
         let className = "tab-list-item"
 
+        if(label === "Client Home"){
+            className += ' min-width'
+        }
+
         if(activeTab === label) {
             className += ' tab-list-active'
         }

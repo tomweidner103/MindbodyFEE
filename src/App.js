@@ -15,7 +15,7 @@ class App extends React.Component {
     super();
     this.state = {
       selected: "",
-      id: "Dashboard",
+      id: "Business_Overview",
       tab: ""
     };
   }
@@ -62,7 +62,7 @@ class App extends React.Component {
         </div>
         <div>
           <Switch>
-            <Route exact path="/" component={Dashboard} />
+            <Route exact path="/" component={Overview} />
             <Route exact path="/Dashboard" component={Dashboard} />
             {/* <Route exact path="/dashboard" component={Overview} /> */}
             {/* <Route exact path="/Classes/Classes" component={Classes} /> */}

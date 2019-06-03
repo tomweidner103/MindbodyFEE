@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import Tab from './Tab'
 
 class NavBar extends React.Component {
-    //make sure this.props.children is an array
+    // make sure this.props.children is an array
     static propTypes = {
         children: PropTypes.instanceOf(Array).isRequired
     }
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
 
         return (
             <div>
-                <ol className='tab-list'>
+                <div className='tab-list'>
                 {
                     children.map((child) => {
                         const {label} = child.props;
@@ -44,7 +44,7 @@ class NavBar extends React.Component {
                         )
                     })
                 }
-                </ol>
+                </div>
                 <div className="tab-content">
                 {
                     children.map((child) => {

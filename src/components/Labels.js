@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
+import '../index.css'
+
 const Labels = props => {
     let {clicked} = props
     const {labels} = props || []
@@ -10,11 +12,10 @@ const Labels = props => {
             return (
               <Link
                 to={`/${label}`}
-                style={{color: 'black', textDecoration: 'none'}}
+                style={{textDecoration: 'none', color: "#686059"}}
                 key={label}
                 className="sub-nav"
                 id={label}
-                style={{color: "#686059"}}
                 onClick={() => {
                     clicked(label)
                 }

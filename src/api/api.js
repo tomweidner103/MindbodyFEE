@@ -45,7 +45,7 @@ export const programs = [
     26055,
     28455,
     24000,
-    12005,
+    17005,
     22511,
     28515
     ]
@@ -77,58 +77,58 @@ export const programs = [
     ]
     }
     },
-    // {
-    // ProgramID: 103,
-    // Name: "Open Practice",
-    // TotalMonthlySales: 572,
-    // MonthlyAttendance: 276,
-    // Sales: {
-    // CurrentYear: [
-    // 28889,
-    // 39000,
-    // 29445,
-    // 24453,
-    // 15834,
-    // 23898,
-    // 32010
-    // ],
-    // PreviousYear: [
-    // 29015,
-    // 26188,
-    // 40100,
-    // 24000,
-    // 12005,
-    // 22511,
-    // 28515
-    // ]
-    // }
-    // },
-    // {
-    // ProgramID: 104,
-    // Name: "Yoga Videos",
-    // TotalMonthlySales: 391.32,
-    // MonthlyAttendance: 82,
-    // Sales: {
-    // CurrentYear: [
-    // 28889,
-    // 39000,
-    // 29445,
-    // 24453,
-    // 15834,
-    // 23898,
-    // 32010
-    // ],
-    // PreviousYear: [
-    // 29015,
-    // 26188,
-    // 40100,
-    // 24000,
-    // 12005,
-    // 22511,
-    // 28515
-    // ]
-    // }
-    // }
+    {
+    ProgramID: 103,
+    Name: "Open Practice",
+    TotalMonthlySales: 5720,
+    MonthlyAttendance: 276,
+    Sales: {
+    CurrentYear: [
+    28889,
+    39000,
+    29445,
+    24453,
+    15834,
+    23898,
+    32010
+    ],
+    PreviousYear: [
+    29015,
+    26188,
+    40100,
+    24000,
+    12005,
+    22511,
+    28515
+    ]
+    }
+    },
+    {
+    ProgramID: 104,
+    Name: "Yoga Videos",
+    TotalMonthlySales: 2391.32,
+    MonthlyAttendance: 82,
+    Sales: {
+    CurrentYear: [
+    28889,
+    39000,
+    29445,
+    24453,
+    15834,
+    23898,
+    32010
+    ],
+    PreviousYear: [
+    29015,
+    26188,
+    40100,
+    24000,
+    12005,
+    22511,
+    28515
+    ]
+    }
+    }
     ]
 
 export const pricing = [
@@ -258,90 +258,90 @@ export const pricing = [
     Name: "5 Class Pass",
     Sales: 520
     },
-    // {
-    // PricingOptionID: 920,
-    // ProgramID: 103,
-    // Name: "Monthly Unlimited",
-    // Sales: 4260
-    // },
-    // {
-    // PricingOptionID: 921,
-    // ProgramID: 103,
-    // Name: "Student 1 Month",
-    // Sales: 1750
-    // },
-    // {
-    // PricingOptionID: 922,
-    // ProgramID: 103,
-    // Name: "Single Visit",
-    // Sales: 560
-    // },
-    // {
-    // PricingOptionID: 923,
-    // ProgramID: 103,
-    // Name: "10 Class Pass",
-    // Sales: 475
-    // },
-    // {
-    // PricingOptionID: 924,
-    // ProgramID: 103,
-    // Name: "Student Single Visit",
-    // Sales: 445
-    // },
-    // {
-    // PricingOptionID: 925,
-    // ProgramID: 103,
-    // Name: "20 Class Pass",
-    // Sales: 230
-    // },
-    // {
-    // PricingOptionID: 926,
-    // ProgramID: 103,
-    // Name: "5 Class Pass",
-    // Sales: 520
-    // },
-    // {
-    // PricingOptionID: 1020,
-    // ProgramID: 104,
-    // Name: "Monthly Unlimited",
-    // Sales: 4260
-    // },
-    // {
-    // PricingOptionID: 1021,
-    // ProgramID: 104,
-    // Name: "Student 1 Month",
-    // Sales: 1750
-    // },
-    // {
-    // PricingOptionID: 1022,
-    // ProgramID: 104,
-    // Name: "Single Visit",
-    // Sales: 560
-    // },
-    // {
-    // PricingOptionID: 1023,
-    // ProgramID: 104,
-    // Name: "10 Class Pass",
-    // Sales: 475
-    // },
-    // {
-    // PricingOptionID: 1024,
-    // ProgramID: 104,
-    // Name: "Student Single Visit",
-    // Sales: 445
-    // },
-    // {
-    // PricingOptionID: 1025,
-    // ProgramID: 104,
-    // Name: "20 Class Pass",
-    // Sales: 230
-    // },
-    // {
-    // PricingOptionID: 1026,
-    // ProgramID: 104,
-    // Name: "5 Class Pass",
-    // Sales: 520
-    // }
+    {
+    PricingOptionID: 920,
+    ProgramID: 103,
+    Name: "Monthly Unlimited",
+    Sales: 4260
+    },
+    {
+    PricingOptionID: 921,
+    ProgramID: 103,
+    Name: "Student 1 Month",
+    Sales: 1750
+    },
+    {
+    PricingOptionID: 922,
+    ProgramID: 103,
+    Name: "Single Visit",
+    Sales: 560
+    },
+    {
+    PricingOptionID: 923,
+    ProgramID: 103,
+    Name: "10 Class Pass",
+    Sales: 475
+    },
+    {
+    PricingOptionID: 924,
+    ProgramID: 103,
+    Name: "Student Single Visit",
+    Sales: 445
+    },
+    {
+    PricingOptionID: 925,
+    ProgramID: 103,
+    Name: "20 Class Pass",
+    Sales: 230
+    },
+    {
+    PricingOptionID: 926,
+    ProgramID: 103,
+    Name: "5 Class Pass",
+    Sales: 520
+    },
+    {
+    PricingOptionID: 1020,
+    ProgramID: 104,
+    Name: "Monthly Unlimited",
+    Sales: 4260
+    },
+    {
+    PricingOptionID: 1021,
+    ProgramID: 104,
+    Name: "Student 1 Month",
+    Sales: 1750
+    },
+    {
+    PricingOptionID: 1022,
+    ProgramID: 104,
+    Name: "Single Visit",
+    Sales: 560
+    },
+    {
+    PricingOptionID: 1023,
+    ProgramID: 104,
+    Name: "10 Class Pass",
+    Sales: 475
+    },
+    {
+    PricingOptionID: 1024,
+    ProgramID: 104,
+    Name: "Student Single Visit",
+    Sales: 445
+    },
+    {
+    PricingOptionID: 1025,
+    ProgramID: 104,
+    Name: "20 Class Pass",
+    Sales: 230
+    },
+    {
+    PricingOptionID: 1026,
+    ProgramID: 104,
+    Name: "5 Class Pass",
+    Sales: 520
+    }
     ]
 
 export const tabs = [
